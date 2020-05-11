@@ -27,5 +27,17 @@
  */
 
 import './index.css';
+import * as monaco from 'monaco-editor'
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+document.addEventListener('DOMContentLoaded', function () {
+  var container = document.createElement("div");
+  container.style.height = "300px";
+  document.body.appendChild(container);
+
+  monaco.editor.create(container, {
+    value: 'console.log("Hello, world")',
+    language: 'javascript'
+  });
+});
